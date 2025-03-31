@@ -1,0 +1,24 @@
+while True:
+
+    numero = int(input("Escribe un número de tres cifras: "))
+
+    
+    numero_str = str(numero)
+
+    
+    numero_reves = numero_str[::-1]
+
+    
+    if numero_str == numero_reves:
+        print("El numero es igual al reves")
+    else:
+        print("el número no es igual al reves")
+
+    
+    respuesta = input("¿Quieres probar con otro numero? (sí/no): ").strip().lower()
+
+    
+    if respuesta != 'sí':
+        print("Byebye! 👅")
+        break
+

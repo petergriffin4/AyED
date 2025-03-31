@@ -1,0 +1,40 @@
+def calcular_compra(cantidad_docenas):
+    
+    precio_por_docena = 20  
+
+    
+    monto_compra = cantidad_docenas * precio_por_docena
+
+    
+    if cantidad_docenas > 3:
+        descuento = monto_compra * 0.15  
+        unidades_obsequio = (cantidad_docenas - 3)  
+    else:
+        descuento = monto_compra * 0.10 
+        unidades_obsequio = 0  
+
+   
+    monto_pagar = monto_compra - descuento
+
+    return monto_compra, descuento, monto_pagar, unidades_obsequio
+
+
+while True:
+    
+    cantidad_docenas = int(input("Ingrese la cantidad de docenas que desea comprar: "))
+
+    
+    monto_compra, descuento, monto_pagar, unidades_obsequio = calcular_compra(cantidad_docenas)
+
+   
+    print(f"\nResumen de la compra:")
+    print(f"Monto de la compra: {monto_compra} unidades monetarias")
+    print(f"Descuento: {descuento} unidades monetarias")
+    print(f"Monto a pagar: {monto_pagar} unidades monetarias")
+    print(f"Unidades de obsequio: {unidades_obsequio}\n")
+
+   
+    continuar = input("¿Desea realizar otra compra? (si/no): ").lower()
+    if continuar != 'si':
+        print("¡Gracias por su compra!")
+        break
